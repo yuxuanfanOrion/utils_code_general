@@ -1,0 +1,43 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train_debug",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "./tools/train.py",
+            "console": "integratedTerminal",
+            "stopOnEntry": true,
+            "args": [
+                "projects/configs/tracking/jdt3d_f1.py",
+                "--work-dir",
+                "job_artifacts/jdt3d_f1"
+            ],
+            "python": "/root/miniconda3/envs/jdt3d/bin/python"
+        },
+        {
+            "name": "dataset_debug",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "tools/create_data.py",
+            "console": "integratedTerminal",
+            "stopOnEntry": true,
+            "args": [
+                "vod-tracking",
+                "--root-path",
+                "data/vod/radar_5frames",
+                "--out-dir",
+                "data/vod/radar_5frames",
+                "--extra-tag",
+                "vod_track"
+            ],
+            "python": "/root/miniconda3/envs/jdt3d/bin/python"
+        },
+    ]
+    
+}
